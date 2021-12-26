@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light py-0 px-2">
+  <a class="navbar-brand" href="/">
+    <!-- Replace with your logo. Just specify height, not width. -->
+    <img height="36" src="/static/IITMOD-Logo.svg" alt="Logo" class="d-inline-block">
+      <span class="px-4">Learn Faster with Flashcards!</span>
+  </a>
+  <div class="collapse navbar-collapse me-auto" id="navbarSupportedContent">
+      {% if current_user.is_authenticated %}
+        <a class="nav-item nav-link" href="/login/" title="Log in again" data-placement="bottom">
+          {{ current_user.user_id }}
+        </a>
+        <a class="nav-item nav-link" href="/logout/" title="Log out" data-placement="bottom">Log Out <i class="fas fa-sign-out-alt"></i></a>
+      {% else %}
+        <a class="nav-item nav-link" href="/login/" title="Log in again" data-placement="bottom">
+          Log in
+        </a>
+      {% endif %}
+  </div>
+</nav>
